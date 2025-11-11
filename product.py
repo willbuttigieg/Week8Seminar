@@ -1,7 +1,8 @@
 """
 Cp1404 Seminar 8
-Product app
+Product class
 """
+
 
 class Product:
     """Product class for storing details about a product."""
@@ -11,7 +12,10 @@ class Product:
         self.name = name
         self.price = price
 
+    def __str__(self):
+        """Return a product instance as a string"""
+        return f"{self.name}, ${self.price}"
 
     def __repr__(self):
-        """String representation of a product."""
-        return f"{self.name}, ${self.price}"
+        """Return developer-frienly string representation of product instance."""
+        return f"{vars(self)}"
