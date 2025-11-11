@@ -10,3 +10,8 @@ class Product:
         """Initialise a product."""
         self.name = name
         self.price = price
+
+
+    def __repr__(self):
+        """String representation of a product."""
+        return f"{self.name}, ${self.price}"
