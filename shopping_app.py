@@ -16,7 +16,8 @@ class ShoppingApp(App):
     def __init__(self, **kwargs):
         """Construct main kivy app."""
         super().__init__(**kwargs)
-        products = load_products("products.json")
+        self.products = load_products("products.json")
+
 
     def build(self):
         """Build main kivy app."""
@@ -28,6 +29,7 @@ class ShoppingApp(App):
 
     def create_widgets(self):
         """Create widgets from ***."""
+        self.status_text = f"${total_price}"
         for product in products:
             button = Button(text=product)
             button.product = product
@@ -35,8 +37,10 @@ class ShoppingApp(App):
 
     def press_entry(self, instance):
         """Handle what happens when product button is pressed."""
+        total_price = 0
         product = instance.product
-        cart_price += product.price
+        product_price = product.price
+        total_price += product_price
 
 
 
