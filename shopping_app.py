@@ -33,7 +33,7 @@ class ShoppingApp(App):
             button.product = product
 
 
-    def press_entry(self):
+    def press_entry(self, instance):
         """Handle what happens when product button is pressed."""
         product = instance.product
         cart_price += product.price
